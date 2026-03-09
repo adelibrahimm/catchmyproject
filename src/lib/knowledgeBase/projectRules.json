@@ -1,0 +1,202 @@
+[
+    {
+        "skill": "python",
+        "interest": "healthcare",
+        "recommendedDomain": "AI-Powered Healthcare Diagnostics",
+        "suggestedTech": [
+            "TensorFlow",
+            "Pandas",
+            "Flask"
+        ]
+    },
+    {
+        "skill": "python",
+        "interest": "education",
+        "recommendedDomain": "Intelligent Tutoring Systems",
+        "suggestedTech": [
+            "scikit-learn",
+            "NLTK",
+            "Django"
+        ]
+    },
+    {
+        "skill": "python",
+        "interest": "finance",
+        "recommendedDomain": "Financial Prediction & Analytics",
+        "suggestedTech": [
+            "Pandas",
+            "NumPy",
+            "Prophet"
+        ]
+    },
+    {
+        "skill": "javascript",
+        "interest": "ecommerce",
+        "recommendedDomain": "Full Stack E-Commerce Platforms",
+        "suggestedTech": [
+            "React",
+            "Node.js",
+            "MongoDB"
+        ]
+    },
+    {
+        "skill": "javascript",
+        "interest": "entertainment",
+        "recommendedDomain": "Interactive Media Applications",
+        "suggestedTech": [
+            "React",
+            "Three.js",
+            "WebRTC"
+        ]
+    },
+    {
+        "skill": "react",
+        "interest": "education",
+        "recommendedDomain": "EdTech Interactive Learning Platforms",
+        "suggestedTech": [
+            "Next.js",
+            "Firebase",
+            "TailwindCSS"
+        ]
+    },
+    {
+        "skill": "tensorflow",
+        "interest": "healthcare",
+        "recommendedDomain": "Medical Image Analysis with Deep Learning",
+        "suggestedTech": [
+            "TensorFlow",
+            "OpenCV",
+            "Flask"
+        ]
+    },
+    {
+        "skill": "tensorflow",
+        "interest": "environment",
+        "recommendedDomain": "Environmental Monitoring with Neural Networks",
+        "suggestedTech": [
+            "TensorFlow",
+            "Keras",
+            "IoT Sensors"
+        ]
+    },
+    {
+        "skill": "pytorch",
+        "interest": "robotics",
+        "recommendedDomain": "Autonomous Robotics Systems",
+        "suggestedTech": [
+            "PyTorch",
+            "ROS",
+            "OpenCV"
+        ]
+    },
+    {
+        "skill": "sql",
+        "interest": "finance",
+        "recommendedDomain": "Database-Driven Financial Systems",
+        "suggestedTech": [
+            "PostgreSQL",
+            "Python",
+            "FastAPI"
+        ]
+    },
+    {
+        "skill": "mongodb",
+        "interest": "social_good",
+        "recommendedDomain": "Social Impact Data Platforms",
+        "suggestedTech": [
+            "MongoDB",
+            "Express.js",
+            "React"
+        ]
+    },
+    {
+        "skill": "docker",
+        "interest": "smart_cities",
+        "recommendedDomain": "Cloud-Native Smart City Solutions",
+        "suggestedTech": [
+            "Docker",
+            "Kubernetes",
+            "AWS"
+        ]
+    },
+    {
+        "skill": "aws",
+        "interest": "transportation",
+        "recommendedDomain": "Cloud-Based Logistics Optimization",
+        "suggestedTech": [
+            "AWS Lambda",
+            "DynamoDB",
+            "Python"
+        ]
+    },
+    {
+        "skill": "flutter",
+        "interest": "tourism",
+        "recommendedDomain": "Mobile Tourism & Travel Applications",
+        "suggestedTech": [
+            "Flutter",
+            "Firebase",
+            "Google Maps API"
+        ]
+    },
+    {
+        "skill": "scikit",
+        "interest": "agriculture",
+        "recommendedDomain": "Machine Learning for Precision Agriculture",
+        "suggestedTech": [
+            "scikit-learn",
+            "Pandas",
+            "IoT"
+        ]
+    },
+    {
+        "skill": "opencv",
+        "interest": "cybersecurity",
+        "recommendedDomain": "Computer Vision Security Systems",
+        "suggestedTech": [
+            "OpenCV",
+            "TensorFlow",
+            "Python"
+        ]
+    },
+    {
+        "skill": "nodejs",
+        "interest": "gaming",
+        "recommendedDomain": "Real-Time Multiplayer Game Servers",
+        "suggestedTech": [
+            "Node.js",
+            "Socket.IO",
+            "Redis"
+        ]
+    },
+    {
+        "skill": "react_native",
+        "interest": "sports",
+        "recommendedDomain": "Sports Analytics Mobile Apps",
+        "suggestedTech": [
+            "React Native",
+            "Firebase",
+            "TensorFlow Lite"
+        ]
+    },
+    {
+        "skill": "blockchain",
+        "interest": "legal",
+        "recommendedDomain": "Blockchain-Based Legal Contract Systems",
+        "suggestedTech": [
+            "Solidity",
+            "Ethereum",
+            "IPFS"
+        ]
+    },
+    {
+        "skill": "keras",
+        "interest": "art",
+        "recommendedDomain": "AI-Generated Art & Creative Tools",
+        "suggestedTech": [
+            "Keras",
+            "GANs",
+            "Stable Diffusion"
+        ]
+    }
+]

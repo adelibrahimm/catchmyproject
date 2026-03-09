@@ -1,0 +1,36 @@
+# Academic Extensions — Walkthrough
+
+All 7 academic course modules have been implemented and verified.
+
+## What Was Built
+
+| # | Course | Module | Key Files |
+|---|--------|--------|-----------|
+| 1 | Knowledge Based Systems | Rule engine (20 rules, forward-chaining) | [src/lib/knowledgeBase/ruleEngine.ts](file:///d:/CAREER/nnnnn/src/lib/knowledgeBase/ruleEngine.ts), [projectRules.json](file:///d:/CAREER/nnnnn/src/lib/knowledgeBase/projectRules.json) |
+| 2 | Machine Learning | CV skill extractor (PDF → skills) | [src/lib/ml/cvParser.ts](file:///d:/CAREER/nnnnn/src/lib/ml/cvParser.ts), [ml/cv_skill_extractor.ipynb](file:///d:/CAREER/nnnnn/ml/cv_skill_extractor.ipynb) |
+| 3 | Neural Networks | Skill domain classifier (2-layer NN) | [src/lib/ml/skillClassifier.ts](file:///d:/CAREER/nnnnn/src/lib/ml/skillClassifier.ts), [ml/skill_domain_classifier.ipynb](file:///d:/CAREER/nnnnn/ml/skill_domain_classifier.ipynb) |
+| 4 | Optimization Techniques | Greedy set-cover optimizer | [src/lib/optimization/projectOptimizer.ts](file:///d:/CAREER/nnnnn/src/lib/optimization/projectOptimizer.ts) |
+| 5 | Cloud Computing | Docker + deploy guides | [Dockerfile](file:///d:/CAREER/nnnnn/Dockerfile), [docker-compose.yml](file:///d:/CAREER/nnnnn/docker-compose.yml), [cloud/deploy.md](file:///d:/CAREER/nnnnn/cloud/deploy.md) |
+| 6 | Advanced Databases | Relational schema (10 tables) | [database/schema.sql](file:///d:/CAREER/nnnnn/database/schema.sql) |
+| 7 | Systems Design & Analysis | Architecture, use cases, data flow docs | `docs/*.md` |
+
+## UI Integration Points
+
+- **Step 3 (Skills)**: "Upload CV" button (ML) + domain badges on each skill (NN)
+- **Step 4 (Results)**: "Optimize Selection" button highlights optimal project combo
+- **Generate flow**: KB rule engine runs before Gemini call, injecting domain recommendations
+
+## Files Modified
+
+| File | Change |
+|------|--------|
+| [gemini.ts](file:///d:/CAREER/nnnnn/src/lib/gemini.ts) | Added `kbContext` parameter to [generateIdeas()](file:///d:/CAREER/nnnnn/src/lib/gemini.ts#21-61) |
+| [Generator.tsx](file:///d:/CAREER/nnnnn/src/pages/Generator.tsx) | Added CV upload, domain badges, optimizer, KB integration |
+| [Home.tsx](file:///d:/CAREER/nnnnn/src/pages/Home.tsx) | Updated to display all 7 courses |
+| [i18n.tsx](file:///d:/CAREER/nnnnn/src/lib/i18n.tsx) | Added translations for CV upload, optimization features |
+
+## Verification
+
+- ✅ `npm run lint` (tsc --noEmit) — **0 errors**
+- ✅ `npm run build` (vite build) — **success**, output: `dist/` (2,288 KB JS + 51 KB CSS)
+- ✅ Dev server running at http://localhost:3000

@@ -1,0 +1,301 @@
+export interface Skill {
+  id: string;
+  en: string;
+  ar: string;
+}
+
+export interface SkillCategory {
+  id: string;
+  en: string;
+  ar: string;
+  skills: Skill[];
+}
+
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    id: 'programming',
+    en: 'Programming Languages',
+    ar: 'لغات البرمجة',
+    skills: [
+      { id: 'python', en: 'Python', ar: 'بايثون' },
+      { id: 'javascript', en: 'JavaScript', ar: 'جافا سكريبت' },
+      { id: 'java', en: 'Java', ar: 'جافا' },
+      { id: 'cpp', en: 'C++', ar: 'سي بلس بلس' },
+      { id: 'csharp', en: 'C#', ar: 'سي شارب' },
+      { id: 'r', en: 'R', ar: 'آر' },
+      { id: 'matlab', en: 'MATLAB', ar: 'ماتلاب' },
+      { id: 'sql', en: 'SQL', ar: 'إس كيو إل' },
+      { id: 'typescript', en: 'TypeScript', ar: 'تايب سكريبت' },
+      { id: 'go', en: 'Go', ar: 'جو' },
+      { id: 'php', en: 'PHP', ar: 'بي إتش بي' },
+      { id: 'swift', en: 'Swift', ar: 'سويفت' },
+      { id: 'kotlin', en: 'Kotlin', ar: 'كوتلن' },
+    ]
+  },
+  {
+    id: 'web',
+    en: 'Web Development',
+    ar: 'تطوير الويب',
+    skills: [
+      { id: 'html_css', en: 'HTML/CSS', ar: 'إتش تي إم إل / سي إس إس' },
+      { id: 'react', en: 'React', ar: 'رياكت' },
+      { id: 'vue', en: 'Vue.js', ar: 'فيو جي إس' },
+      { id: 'angular', en: 'Angular', ar: 'أنجولار' },
+      { id: 'nodejs', en: 'Node.js', ar: 'نود جي إس' },
+      { id: 'django', en: 'Django', ar: 'جانجو' },
+      { id: 'flask', en: 'Flask', ar: 'فلاسك' },
+      { id: 'rest_apis', en: 'REST APIs', ar: 'واجهات برمجة تطبيقات REST' },
+      { id: 'graphql', en: 'GraphQL', ar: 'جراف كيو إل' },
+      { id: 'nextjs', en: 'Next.js', ar: 'نكست جي إس' },
+    ]
+  },
+  {
+    id: 'data_ai',
+    en: 'Data Science & AI',
+    ar: 'علم البيانات والذكاء الاصطناعي',
+    skills: [
+      { id: 'machine_learning', en: 'Machine Learning', ar: 'تعلم الآلة' },
+      { id: 'deep_learning', en: 'Deep Learning', ar: 'التعلم العميق' },
+      { id: 'nlp', en: 'NLP', ar: 'معالجة اللغات الطبيعية' },
+      { id: 'computer_vision', en: 'Computer Vision', ar: 'رؤية الحاسوب' },
+      { id: 'data_mining', en: 'Data Mining', ar: 'تنقيب البيانات' },
+      { id: 'big_data', en: 'Big Data', ar: 'البيانات الضخمة' },
+      { id: 'tensorflow', en: 'TensorFlow', ar: 'تنسرفلو' },
+      { id: 'pytorch', en: 'PyTorch', ar: 'باي تورش' },
+      { id: 'scikit', en: 'SciKit-learn', ar: 'سايكت ليرن' },
+      { id: 'data_analysis', en: 'Data Analysis', ar: 'تحليل البيانات' },
+    ]
+  },
+  {
+    id: 'research',
+    en: 'Research',
+    ar: 'البحث العلمي',
+    skills: [
+      { id: 'academic_writing', en: 'Academic Writing', ar: 'الكتابة الأكاديمية' },
+      { id: 'literature_review', en: 'Literature Review', ar: 'مراجعة الأدبيات' },
+      { id: 'data_collection', en: 'Data Collection', ar: 'جمع البيانات' },
+      { id: 'statistical_analysis', en: 'Statistical Analysis', ar: 'التحليل الإحصائي' },
+      { id: 'research_methodology', en: 'Research Methodology', ar: 'منهجية البحث' },
+      { id: 'latex', en: 'LaTeX', ar: 'لاتيكس' },
+      { id: 'spss', en: 'SPSS', ar: 'إس بي إس إس' },
+    ]
+  },
+  {
+    id: 'design',
+    en: 'Design',
+    ar: 'التصميم',
+    skills: [
+      { id: 'ui_ux', en: 'UI/UX Design', ar: 'تصميم واجهة وتجربة المستخدم' },
+      { id: 'figma', en: 'Figma', ar: 'فيجما' },
+      { id: 'graphic_design', en: 'Graphic Design', ar: 'التصميم الجرافيكي' },
+      { id: 'prototyping', en: 'Prototyping', ar: 'النمذجة' },
+      { id: 'user_research', en: 'User Research', ar: 'أبحاث المستخدمين' },
+    ]
+  },
+  {
+    id: 'soft_skills',
+    en: 'Soft Skills',
+    ar: 'المهارات الشخصية',
+    skills: [
+      { id: 'leadership', en: 'Leadership', ar: 'القيادة' },
+      { id: 'communication', en: 'Communication', ar: 'التواصل' },
+      { id: 'problem_solving', en: 'Problem Solving', ar: 'حل المشكلات' },
+      { id: 'teamwork', en: 'Teamwork', ar: 'العمل الجماعي' },
+      { id: 'time_management', en: 'Time Management', ar: 'إدارة الوقت' },
+      { id: 'critical_thinking', en: 'Critical Thinking', ar: 'التفكير النقدي' },
+      { id: 'presentation', en: 'Presentation', ar: 'التقديم والعرض' },
+    ]
+  },
+  {
+    id: 'database',
+    en: 'Database',
+    ar: 'قواعد البيانات',
+    skills: [
+      { id: 'mysql', en: 'MySQL', ar: 'ماي إس كيو إل' },
+      { id: 'postgresql', en: 'PostgreSQL', ar: 'بوستجري إس كيو إل' },
+      { id: 'mongodb', en: 'MongoDB', ar: 'مونجو دي بي' },
+      { id: 'oracle', en: 'Oracle', ar: 'أوراكل' },
+      { id: 'sql_server', en: 'SQL Server', ar: 'خادم إس كيو إل' },
+      { id: 'redis', en: 'Redis', ar: 'ريديس' },
+    ]
+  },
+  {
+    id: 'devops_cloud',
+    en: 'DevOps & Cloud',
+    ar: 'ممارسات التطوير والسحابة',
+    skills: [
+      { id: 'git', en: 'Git', ar: 'جت' },
+      { id: 'docker', en: 'Docker', ar: 'دوكر' },
+      { id: 'aws', en: 'AWS', ar: 'خدمات أمازون ويب' },
+      { id: 'azure', en: 'Azure', ar: 'أزور' },
+      { id: 'linux', en: 'Linux', ar: 'لينكس' },
+      { id: 'cicd', en: 'CI/CD', ar: 'التكامل والتسليم المستمر' },
+      { id: 'kubernetes', en: 'Kubernetes', ar: 'كوبرنيتس' },
+    ]
+  },
+  {
+    id: 'mobile',
+    en: 'Mobile',
+    ar: 'تطوير الموبايل',
+    skills: [
+      { id: 'android', en: 'Android Development', ar: 'تطوير أندرويد' },
+      { id: 'ios', en: 'iOS Development', ar: 'تطوير آي أو إس' },
+      { id: 'flutter', en: 'Flutter', ar: 'فلاتر' },
+      { id: 'react_native', en: 'React Native', ar: 'رياكت نيتف' },
+    ]
+  },
+  {
+    id: 'security',
+    en: 'Security',
+    ar: 'الأمن السيبراني',
+    skills: [
+      { id: 'cybersecurity', en: 'Cybersecurity', ar: 'الأمن السيبراني' },
+      { id: 'network_security', en: 'Network Security', ar: 'أمن الشبكات' },
+      { id: 'penetration_testing', en: 'Penetration Testing', ar: 'اختبار الاختراق' },
+      { id: 'cryptography', en: 'Cryptography', ar: 'التشفير' },
+      { id: 'siem_tools', en: 'SIEM Tools', ar: 'أدوات إدارة المعلومات والأحداث الأمنية' },
+      { id: 'incident_response', en: 'Incident Response', ar: 'الاستجابة للحوادث' },
+      { id: 'malware_analysis', en: 'Malware Analysis', ar: 'تحليل البرمجيات الخبيثة' },
+      { id: 'digital_forensics', en: 'Digital Forensics', ar: 'الأدلة الجنائية الرقمية' },
+      { id: 'ethical_hacking', en: 'Ethical Hacking', ar: 'الاختراق الأخلاقي' },
+      { id: 'web_security', en: 'Web Application Security', ar: 'أمن تطبيقات الويب' },
+      { id: 'cloud_security', en: 'Cloud Security', ar: 'أمن السحابة' },
+      { id: 'iam', en: 'Identity & Access Management', ar: 'إدارة الهوية والوصول' },
+      { id: 'soc_operations', en: 'SOC Operations', ar: 'عمليات مركز العمليات الأمنية' },
+      { id: 'vulnerability_assessment', en: 'Vulnerability Assessment', ar: 'تقييم الثغرات' },
+      { id: 'firewall_management', en: 'Firewall Management', ar: 'إدارة الجدران النارية' },
+      { id: 'compliance', en: 'Compliance & Auditing', ar: 'الامتثال والتدقيق' },
+    ]
+  },
+  {
+    id: 'healthcare',
+    en: 'Healthcare & Bio',
+    ar: 'الرعاية الصحية والبيولوجيا',
+    skills: [
+      { id: 'bioinformatics', en: 'Bioinformatics', ar: 'المعلوماتية الحيوية' },
+      { id: 'medical_imaging', en: 'Medical Imaging', ar: 'التصوير الطبي' },
+      { id: 'clinical_data', en: 'Clinical Data', ar: 'البيانات السريرية' },
+      { id: 'genomics', en: 'Genomics', ar: 'علم الجينوم' },
+      { id: 'biostatistics', en: 'Biostatistics', ar: 'الإحصاء الحيوي' },
+    ]
+  },
+  {
+    id: 'mathematics',
+    en: 'Mathematics',
+    ar: 'الرياضيات',
+    skills: [
+      { id: 'statistics', en: 'Statistics', ar: 'الإحصاء' },
+      { id: 'linear_algebra', en: 'Linear Algebra', ar: 'الجبر الخطي' },
+      { id: 'calculus', en: 'Calculus', ar: 'التفاضل والتكامل' },
+      { id: 'probability', en: 'Probability', ar: 'الاحتمالات' },
+      { id: 'numerical_methods', en: 'Numerical Methods', ar: 'الطرق العددية' },
+      { id: 'discrete_math', en: 'Discrete Math', ar: 'الرياضيات المتقطعة' },
+    ]
+  },
+  {
+    id: 'engineering',
+    en: 'Engineering',
+    ar: 'الهندسة',
+    skills: [
+      { id: 'autocad', en: 'AutoCAD', ar: 'أوتوكاد' },
+      { id: 'solidworks', en: 'SolidWorks', ar: 'سوليدووركس' },
+      { id: 'circuit_design', en: 'Circuit Design', ar: 'تصميم الدوائر' },
+      { id: 'structural_analysis', en: 'Structural Analysis', ar: 'التحليل الإنشائي' },
+      { id: 'thermodynamics', en: 'Thermodynamics', ar: 'الديناميكا الحرارية' },
+      { id: 'plc_programming', en: 'PLC Programming', ar: 'برمجة أجهزة التحكم المنطقي' },
+      { id: 'fluid_mechanics', en: 'Fluid Mechanics', ar: 'ميكانيكا الموائع' },
+      { id: 'fea', en: 'Finite Element Analysis', ar: 'تحليل العناصر المحدودة' },
+      { id: 'cad_design', en: 'CAD Design', ar: 'تصميم بمساعدة الحاسوب' },
+      { id: 'electrical_circuits', en: 'Electrical Circuits', ar: 'الدوائر الكهربائية' },
+      { id: 'power_systems', en: 'Power Systems', ar: 'أنظمة الطاقة' },
+      { id: 'signal_processing', en: 'Signal Processing', ar: 'معالجة الإشارات' },
+      { id: 'control_systems', en: 'Control Systems', ar: 'أنظمة التحكم' },
+      { id: 'materials_science', en: 'Materials Science', ar: 'علم المواد' },
+      { id: 'robotics', en: 'Robotics', ar: 'الروبوتات' },
+      { id: 'embedded_systems', en: 'Embedded Systems', ar: 'الأنظمة المدمجة' },
+      { id: 'architecture_design', en: 'Architecture Design', ar: 'التصميم المعماري' },
+    ]
+  },
+  {
+    id: 'science',
+    en: 'Science',
+    ar: 'العلوم',
+    skills: [
+      { id: 'laboratory_research', en: 'Laboratory Research', ar: 'البحث المخبري' },
+      { id: 'microscopy', en: 'Microscopy', ar: 'الفحص المجهري' },
+      { id: 'spectroscopy', en: 'Spectroscopy', ar: 'التحليل الطيفي' },
+      { id: 'experimental_design', en: 'Experimental Design', ar: 'التصميم التجريبي' },
+      { id: 'chemical_analysis', en: 'Chemical Analysis', ar: 'التحليل الكيميائي' },
+      { id: 'molecular_biology', en: 'Molecular Biology', ar: 'البيولوجيا الجزيئية' },
+      { id: 'forensic_analysis', en: 'Forensic Analysis', ar: 'التحليل الجنائي' },
+      { id: 'organic_chemistry', en: 'Organic Chemistry', ar: 'الكيمياء العضوية' },
+      { id: 'genetics', en: 'Genetics', ar: 'علم الوراثة' },
+      { id: 'cell_biology', en: 'Cell Biology', ar: 'بيولوجيا الخلية' },
+      { id: 'microbiology', en: 'Microbiology', ar: 'علم الأحياء الدقيقة' },
+      { id: 'biochemistry', en: 'Biochemistry', ar: 'الكيمياء الحيوية' },
+    ]
+  },
+  {
+    id: 'business',
+    en: 'Business & Finance',
+    ar: 'الأعمال والمالية',
+    skills: [
+      { id: 'financial_modeling', en: 'Financial Modeling', ar: 'النمذجة المالية' },
+      { id: 'market_analysis', en: 'Market Analysis', ar: 'تحليل السوق' },
+      { id: 'strategic_planning', en: 'Strategic Planning', ar: 'التخطيط الاستراتيجي' },
+      { id: 'accounting', en: 'Accounting', ar: 'المحاسبة' },
+      { id: 'project_management', en: 'Project Management', ar: 'إدارة المشاريع' },
+      { id: 'sales_strategy', en: 'Sales Strategy', ar: 'استراتيجية المبيعات' },
+      { id: 'digital_marketing', en: 'Digital Marketing', ar: 'التسويق الرقمي' },
+      { id: 'supply_chain', en: 'Supply Chain Management', ar: 'إدارة سلسلة التوريد' },
+      { id: 'investment_analysis', en: 'Investment Analysis', ar: 'تحليل الاستثمار' },
+      { id: 'economics', en: 'Economics', ar: 'الاقتصاد' },
+      { id: 'human_resources', en: 'Human Resources', ar: 'الموارد البشرية' },
+      { id: 'operations_management', en: 'Operations Management', ar: 'إدارة العمليات' },
+    ]
+  },
+  {
+    id: 'roles',
+    en: 'Roles',
+    ar: 'الأدوار',
+    skills: [
+      { id: 'frontend_dev', en: 'Frontend Developer', ar: 'مطور واجهات أمامية' },
+      { id: 'backend_dev', en: 'Backend Developer', ar: 'مطور خلفي' },
+      { id: 'fullstack_dev', en: 'Full Stack Developer', ar: 'مطور شامل' },
+      { id: 'mobile_dev', en: 'Mobile Developer', ar: 'مطور تطبيقات موبايل' },
+      { id: 'ui_ux_designer', en: 'UI/UX Designer', ar: 'مصمم واجهات المستخدم تجربة المستخدم' },
+      { id: 'data_analyst', en: 'Data Analyst', ar: 'محلل بيانات' },
+      { id: 'data_scientist', en: 'Data Scientist', ar: 'عالم بيانات' },
+      { id: 'devops_eng', en: 'DevOps Engineer', ar: 'مهندس ديف أوبس' },
+      { id: 'product_manager', en: 'Product Manager', ar: 'مدير منتج' },
+      { id: 'project_manager_role', en: 'Project Manager', ar: 'مدير مشروع' },
+      { id: 'research_analyst', en: 'Research Analyst', ar: 'محلل أبحاث' },
+      { id: 'content_writer', en: 'Content Writer', ar: 'كاتب محتوى' },
+      { id: 'business_analyst', en: 'Business Analyst', ar: 'محلل أعمال' },
+      { id: 'tech_lead', en: 'Tech Lead', ar: 'قائد تقني' },
+      { id: 'qa_engineer', en: 'QA Engineer', ar: 'مهندس ضمان الجودة' },
+      { id: 'cloud_engineer', en: 'Cloud Engineer', ar: 'مهندس سحابي' },
+      { id: 'db_admin', en: 'Database Administrator', ar: 'مدير قواعد البيانات' },
+      { id: 'solutions_architect', en: 'Solutions Architect', ar: 'مهندس حلول' },
+      { id: 'scrum_master', en: 'Scrum Master', ar: 'مدير سكرم' },
+      { id: 'systems_analyst', en: 'Systems Analyst', ar: 'محلل نظم' },
+      { id: 'network_engineer', en: 'Network Engineer', ar: 'مهندس شبكات' },
+      { id: 'embedded_eng', en: 'Embedded Systems Engineer', ar: 'مهندس نظم مدمجة' },
+      { id: 'game_dev', en: 'Game Developer', ar: 'مطور ألعاب' },
+      { id: 'ai_ml_eng', en: 'AI/ML Engineer', ar: 'مهندس ذكاء اصطناعي وتعلم آلة' },
+      { id: 'blockchain_dev', en: 'Blockchain Developer', ar: 'مطور بلوكتشين' },
+      { id: 'security_analyst', en: 'Security Analyst', ar: 'محلل أمن سيبراني' },
+      { id: 'technical_writer', en: 'Technical Writer', ar: 'كاتب تقني' },
+      { id: 'graphic_designer_role', en: 'Graphic Designer', ar: 'مصمم جرافيك' },
+      { id: 'video_editor', en: 'Video Editor', ar: 'محرر فيديو' },
+      { id: 'social_media_manager', en: 'Social Media Manager', ar: 'مدير وسائل التواصل الاجتماعي' },
+      { id: 'marketing_specialist', en: 'Marketing Specialist', ar: 'أخصائي تسويق' },
+      { id: 'financial_analyst', en: 'Financial Analyst', ar: 'محلل مالي' },
+      { id: 'operations_coordinator', en: 'Operations Coordinator', ar: 'منسق عمليات' },
+      { id: 'software_engineer', en: 'Software Engineer', ar: 'مهندس برمجيات' },
+    ]
+  }
+];
+
+// Helper to get a flat list of all skills if needed for backwards compatibility
+export const SKILLS: Skill[] = SKILL_CATEGORIES.flatMap(cat => cat.skills);

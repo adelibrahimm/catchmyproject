@@ -1,0 +1,68 @@
+# System Architecture
+
+## Course: Systems Design and Analysis
+
+### High-Level Architecture
+
+The NMU AI Advisor platform follows a **client-side SPA architecture** with modular components that map to different academic courses.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         CLIENT (Browser)                        │
+│                                                                 │
+│  ┌───────────────────────────────────────────────────────────┐  │
+│  │                    React Application                      │  │
+│  │                                                           │  │
+│  │  ┌─────────────┐  ┌──────────────┐  ┌────────────────┐   │  │
+│  │  │  Home Page   │  │  Generator   │  │   Plan Page    │   │  │
+│  │  │             │  │  (4 Steps)   │  │  (Streaming)   │   │  │
+│  │  └─────────────┘  └──────┬───────┘  └────────────────┘   │  │
+│  │                          │                                │  │
+│  │              ┌───────────┼───────────┐                    │  │
+│  │              ▼           ▼           ▼                    │  │
+│  │  ┌──────────────┐ ┌──────────┐ ┌──────────────┐          │  │
+│  │  │ Knowledge    │ │ ML: CV   │ │ NN: Skill    │          │  │
+│  │  │ Base Engine  │ │ Parser   │ │ Classifier   │          │  │
+│  │  │ (Rules JSON) │ │ (PDF.js) │ │ (Forward     │          │  │
+│  │  │              │ │          │ │  Pass)        │          │  │
+│  │  └──────────────┘ └──────────┘ └──────────────┘          │  │
+│  │              │                                            │  │
+│  │              ▼                                            │  │
+│  │  ┌────────────────────┐   ┌──────────────────────┐       │  │
+│  │  │ Optimization       │   │ Gemini API Client    │       │  │
+│  │  │ (Greedy Set Cover) │   │ (generateIdeas,      │       │  │
+│  │  │                    │   │  generatePlanStream)  │       │  │
+│  │  └────────────────────┘   └──────────┬───────────┘       │  │
+│  │                                      │                    │  │
+│  └──────────────────────────────────────│────────────────────┘  │
+│                                         │ HTTPS                  │
+└─────────────────────────────────────────│────────────────────────┘
+                                          ▼
+                              ┌────────────────────┐
+                              │  Google Gemini API  │
+                              │  (Cloud Service)    │
+                              └────────────────────┘
+```
+
+### Component Details
+
+| Component | Technology | Course |
+|-----------|-----------|--------|
+| Rule Engine | TypeScript + JSON | Knowledge Based Systems |
+| CV Parser | PDF.js + Keyword Matching | Machine Learning |
+| Skill Classifier | Manual NN Forward Pass | Neural Networks |
+| Project Optimizer | Greedy Set Cover | Optimization Techniques |
+| Deployment | Docker + Vercel/Netlify | Cloud Computing |
+| Schema Design | SQL DDL | Advanced Databases |
+| Documentation | Mermaid + Markdown | Systems Design & Analysis |
+
+### Technology Stack
+
+- **Frontend**: React 19, TypeScript, Vite, TailwindCSS 4
+- **AI**: Google Gemini API (`@google/genai`)
+- **PDF**: PDF.js (`pdfjs-dist`)
+- **Animations**: Motion (Framer Motion)
+- **Routing**: React Router DOM
+- **Markdown**: React Markdown + remark-gfm
+- **PDF Export**: html2pdf.js
+- **i18n**: Custom provider (EN/AR)

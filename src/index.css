@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Override default red and rose to NMU Crimson Logo Colors (#911B1E) */
+  --color-red-50: #fbf4f4;
+  --color-red-100: #f6e9e9;
+  --color-red-200: #eccaca;
+  --color-red-300: #dfa1a2;
+  --color-red-400: #ce6b6e;
+  --color-red-500: #bd4347;
+  --color-red-600: #911b1e;
+  /* Core NMU Primary */
+  --color-red-700: #731619;
+  --color-red-800: #601719;
+  --color-red-900: #4f1517;
+  --color-red-950: #33090a;
+
+  /* Rose is used in some gradients, adjusted to complement crimson */
+  --color-rose-50: #fdf2f4;
+  --color-rose-100: #fae4e5;
+  --color-rose-200: #f4cdd1;
+  --color-rose-300: #eca9ae;
+  --color-rose-400: #df7781;
+  --color-rose-500: #cd4c57;
+  --color-rose-600: #b0323e;
+  --color-rose-700: #ab1933;
+  /* Complements the primary #911b1e */
+  --color-rose-800: #7c202a;
+  --color-rose-900: #681f26;
+  --color-rose-950: #3a0d11;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #334155;
+    border-radius: 20px;
+  }
+
+  .pdf-export-mode {
+    background-color: white !important;
+    color: #1e293b !important;
+    padding: 2rem !important;
+  }
+
+  .pdf-export-mode * {
+    color: #1e293b !important;
+  }
+}
