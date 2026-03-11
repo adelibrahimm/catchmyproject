@@ -1,0 +1,556 @@
+[
+    {
+        "id": "R001",
+        "name": "Deep Learning Medical Imaging Expert",
+        "description": "Student with TensorFlow + Python + Healthcare interest is ideal for medical image analysis",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "tensorflow"
+            },
+            {
+                "type": "skill",
+                "value": "python"
+            },
+            {
+                "type": "interest",
+                "value": "healthcare"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Medical Image Analysis with Deep Learning",
+            "suggestedTech": [
+                "TensorFlow",
+                "OpenCV",
+                "Flask",
+                "DICOM"
+            ]
+        },
+        "cf": 0.95
+    },
+    {
+        "id": "R002",
+        "name": "Autonomous Robotics Engineer",
+        "description": "PyTorch + Python + Robotics → Autonomous Robotics Systems",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "pytorch"
+            },
+            {
+                "type": "skill",
+                "value": "python"
+            },
+            {
+                "type": "interest",
+                "value": "robotics"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Autonomous Robotics with Reinforcement Learning",
+            "suggestedTech": [
+                "PyTorch",
+                "ROS2",
+                "OpenCV",
+                "Gazebo"
+            ]
+        },
+        "cf": 0.93
+    },
+    {
+        "id": "R003",
+        "name": "EdTech Platform Architect",
+        "description": "React + JavaScript + Education → Interactive EdTech Platform",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "react"
+            },
+            {
+                "type": "skill",
+                "value": "javascript"
+            },
+            {
+                "type": "interest",
+                "value": "education"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "AI-Powered Interactive Learning Platform",
+            "suggestedTech": [
+                "Next.js",
+                "Firebase",
+                "Framer Motion",
+                "OpenAI API"
+            ]
+        },
+        "cf": 0.91
+    },
+    {
+        "id": "R004",
+        "name": "Environmental Deep Learning Specialist",
+        "description": "TensorFlow + Environment → Environmental Monitoring with Neural Networks",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "tensorflow"
+            },
+            {
+                "type": "interest",
+                "value": "environment"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Environmental Monitoring with Neural Networks",
+            "suggestedTech": [
+                "TensorFlow",
+                "Keras",
+                "IoT Sensors",
+                "InfluxDB"
+            ]
+        },
+        "cf": 0.88
+    },
+    {
+        "id": "R005",
+        "name": "AI Healthcare Diagnostics Expert",
+        "description": "Python + Healthcare → AI-Powered Diagnostics System",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "python"
+            },
+            {
+                "type": "interest",
+                "value": "healthcare"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "AI-Powered Healthcare Diagnostics",
+            "suggestedTech": [
+                "Python",
+                "scikit-learn",
+                "Pandas",
+                "FastAPI"
+            ]
+        },
+        "cf": 0.82
+    },
+    {
+        "id": "R006",
+        "name": "Full-Stack E-Commerce Developer",
+        "description": "JavaScript + E-Commerce → Full-Stack Platform",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "javascript"
+            },
+            {
+                "type": "interest",
+                "value": "ecommerce"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Full-Stack E-Commerce Platform",
+            "suggestedTech": [
+                "Node.js",
+                "React",
+                "MongoDB",
+                "Stripe API"
+            ]
+        },
+        "cf": 0.85
+    },
+    {
+        "id": "R007",
+        "name": "Cloud-Native Smart City Solutions",
+        "description": "Docker + Smart Cities → Cloud-Native Infrastructure",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "docker"
+            },
+            {
+                "type": "interest",
+                "value": "smart_cities"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Cloud-Native Smart City Infrastructure",
+            "suggestedTech": [
+                "Docker",
+                "Kubernetes",
+                "Prometheus",
+                "Grafana"
+            ]
+        },
+        "cf": 0.87
+    },
+    {
+        "id": "R008",
+        "name": "Blockchain Legal Engineer",
+        "description": "Blockchain + Legal → Smart Contract Systems",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "blockchain"
+            },
+            {
+                "type": "interest",
+                "value": "legal"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Blockchain-Based Legal Contract Automation",
+            "suggestedTech": [
+                "Solidity",
+                "Ethereum",
+                "IPFS",
+                "Hardhat"
+            ]
+        },
+        "cf": 0.86
+    },
+    {
+        "id": "R009",
+        "name": "Precision Agriculture ML Specialist",
+        "description": "scikit-learn + Agriculture → Precision Farming Solutions",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "scikit"
+            },
+            {
+                "type": "interest",
+                "value": "agriculture"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Machine Learning for Precision Agriculture",
+            "suggestedTech": [
+                "scikit-learn",
+                "Pandas",
+                "Raspberry Pi",
+                "NDVI Sensors"
+            ]
+        },
+        "cf": 0.84
+    },
+    {
+        "id": "R010",
+        "name": "CV Security Systems Expert",
+        "description": "OpenCV + Cybersecurity → Computer Vision Security",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "opencv"
+            },
+            {
+                "type": "interest",
+                "value": "cybersecurity"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Computer Vision Security & Surveillance Systems",
+            "suggestedTech": [
+                "OpenCV",
+                "TensorFlow",
+                "Python",
+                "YOLO"
+            ]
+        },
+        "cf": 0.83
+    },
+    {
+        "id": "R011",
+        "name": "Fintech Data Platform Architect",
+        "description": "SQL + Python + Finance → Database-Driven Financial Analytics",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "sql"
+            },
+            {
+                "type": "skill",
+                "value": "python"
+            },
+            {
+                "type": "interest",
+                "value": "finance"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Real-Time Financial Analytics Platform",
+            "suggestedTech": [
+                "PostgreSQL",
+                "Python",
+                "FastAPI",
+                "Apache Kafka"
+            ]
+        },
+        "cf": 0.90
+    },
+    {
+        "id": "R012",
+        "name": "Real-Time Multiplayer Game Server",
+        "description": "Node.js + Gaming → Real-Time Game Server Infrastructure",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "nodejs"
+            },
+            {
+                "type": "interest",
+                "value": "gaming"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Real-Time Multiplayer Game Server",
+            "suggestedTech": [
+                "Node.js",
+                "Socket.IO",
+                "Redis",
+                "WebRTC"
+            ]
+        },
+        "cf": 0.80
+    },
+    {
+        "id": "R013",
+        "name": "AI Generative Art Platform",
+        "description": "Keras + Art → AI-Generated Art Tools",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "keras"
+            },
+            {
+                "type": "interest",
+                "value": "art"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "AI-Generated Art & Creative Tools",
+            "suggestedTech": [
+                "Keras",
+                "Stable Diffusion",
+                "ComfyUI",
+                "Python"
+            ]
+        },
+        "cf": 0.81
+    },
+    {
+        "id": "R014",
+        "name": "Social Impact Data Platform",
+        "description": "MongoDB + Social Good → Community Data Platforms",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "mongodb"
+            },
+            {
+                "type": "interest",
+                "value": "social_good"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Social Impact Data Platform",
+            "suggestedTech": [
+                "MongoDB",
+                "Express.js",
+                "React",
+                "D3.js"
+            ]
+        },
+        "cf": 0.79
+    },
+    {
+        "id": "R015",
+        "name": "Intelligent Tutoring System",
+        "description": "Python + Education → NLP-Powered Tutoring System",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "python"
+            },
+            {
+                "type": "interest",
+                "value": "education"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Intelligent Tutoring System with NLP",
+            "suggestedTech": [
+                "Python",
+                "NLTK",
+                "spaCy",
+                "Django"
+            ]
+        },
+        "cf": 0.80
+    },
+    {
+        "id": "R016",
+        "name": "Cloud Logistics Optimizer",
+        "description": "AWS + Transportation → Cloud-Based Route Optimization",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "aws"
+            },
+            {
+                "type": "interest",
+                "value": "transportation"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Cloud-Based Logistics & Route Optimization",
+            "suggestedTech": [
+                "AWS Lambda",
+                "DynamoDB",
+                "Google Maps API",
+                "Python"
+            ]
+        },
+        "cf": 0.83
+    },
+    {
+        "id": "R017",
+        "name": "Sports Analytics Mobile App",
+        "description": "React Native + Sports → Mobile Performance Analytics",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "react_native"
+            },
+            {
+                "type": "interest",
+                "value": "sports"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Sports Performance Analytics Mobile App",
+            "suggestedTech": [
+                "React Native",
+                "Firebase",
+                "TensorFlow Lite",
+                "Expo"
+            ]
+        },
+        "cf": 0.78
+    },
+    {
+        "id": "R018",
+        "name": "Interactive Entertainment App",
+        "description": "JavaScript + Entertainment → Interactive Media",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "javascript"
+            },
+            {
+                "type": "interest",
+                "value": "entertainment"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Interactive Media & Entertainment Application",
+            "suggestedTech": [
+                "React",
+                "Three.js",
+                "WebRTC",
+                "Canvas API"
+            ]
+        },
+        "cf": 0.75
+    },
+    {
+        "id": "R019",
+        "name": "AI Travel Companion App",
+        "description": "Flutter + Tourism → Smart Travel App",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "flutter"
+            },
+            {
+                "type": "interest",
+                "value": "tourism"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "AI-Powered Smart Travel Companion App",
+            "suggestedTech": [
+                "Flutter",
+                "Firebase",
+                "Google Maps API",
+                "Gemini AI"
+            ]
+        },
+        "cf": 0.77
+    },
+    {
+        "id": "R020",
+        "name": "Python General AI Project",
+        "description": "Python skill alone is sufficient for a general AI/ML project",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "python"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "General AI & Machine Learning Application",
+            "suggestedTech": [
+                "Python",
+                "Jupyter",
+                "Pandas",
+                "Hugging Face"
+            ]
+        },
+        "cf": 0.55
+    },
+    {
+        "id": "R021",
+        "name": "Web Developer General Project",
+        "description": "JavaScript skill alone enables a full-stack web project",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "javascript"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "General Web Application Development",
+            "suggestedTech": [
+                "JavaScript",
+                "Node.js",
+                "React",
+                "MongoDB"
+            ]
+        },
+        "cf": 0.50
+    },
+    {
+        "id": "R022",
+        "name": "PyTorch Deep Learning Enthusiast",
+        "description": "PyTorch skill alone → generic deep learning project",
+        "antecedents": [
+            {
+                "type": "skill",
+                "value": "pytorch"
+            }
+        ],
+        "consequent": {
+            "recommendedDomain": "Deep Learning Research Project",
+            "suggestedTech": [
+                "PyTorch",
+                "Lightning",
+                "Wandb",
+                "HuggingFace"
+            ]
+        },
+        "cf": 0.58
+    }
+]

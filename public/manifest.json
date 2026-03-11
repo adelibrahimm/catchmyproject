@@ -1,0 +1,29 @@
+{
+    "name": "Catch My Project — NMU AI Platform",
+    "short_name": "CatchMyProject",
+    "description": "AI-powered project idea generator for NMU Computer Science students.",
+    "start_url": "/home",
+    "display": "standalone",
+    "background_color": "#f8fafc",
+    "theme_color": "#b91c1c",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/nmu-logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/nmu-logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "education",
+        "productivity"
+    ],
+    "lang": "en"
+}
