@@ -1,4 +1,4 @@
-# Catch My Project 🎯
+# Catch My Project
 
 An intelligent platform designed for Computer Science students at New Mansoura University (NMU) to discover innovative, AI-powered graduation project ideas tailored to their coursework, interests, and strengths.
 
