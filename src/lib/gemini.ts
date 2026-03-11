@@ -59,7 +59,7 @@ function humaniseError(err: unknown): Error {
     return new Error('Invalid API key. Please check GROQ_API_KEY in your .env.local file.');
   }
   if (msg.includes('429') || msg.includes('rate_limit')) {
-    return new Error('Rate limit reached. Groq free tier allows ~30 requests/min. Please wait a moment and try again.');
+    return new Error('Our AI is in maintenance mode now. Go study a bit and come back while we fix it.');
   }
   if (msg.includes('timed out')) return err as Error;
   return new Error(`Generation failed: ${msg.slice(0, 200)}`);
