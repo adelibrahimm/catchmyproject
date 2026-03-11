@@ -15,7 +15,6 @@ import { getTrainingResult, classifySkill, DOMAINS, TrainingResult } from '../li
 import TrainingLossChart from '../components/TrainingLossChart';
 import { saveToHistory, toggleFavorite, isFavorite, HistoryEntry } from './History';
 import { getProfile } from './Profile';
-import { detectSimilarities, SimilarityWarning } from '../lib/similarity';
 import PageMeta from '../components/PageMeta';
 
 export default function Generator() {
@@ -40,8 +39,6 @@ export default function Generator() {
   const [cvResult, setCvResult] = useState<string | null>(null);
   const [inferenceData, setInferenceData] = useState<InferenceResult | null>(null);
   const [nnTraining, setNnTraining] = useState<TrainingResult | null>(null);
-  const [similarityWarnings, setSimilarityWarnings] = useState<SimilarityWarning[]>([]);
-  const [dismissedWarnings, setDismissedWarnings] = useState<Set<number>>(new Set());
   const [expandedReasoning, setExpandedReasoning] = useState<Set<string>>(new Set());
   const [, setFavRefresh] = useState(0);
 
@@ -158,8 +155,6 @@ export default function Generator() {
     setError(null);
     setIdeas([]);  // clear previous ideas before streaming new ones
     setInferenceData(null);
-    setSimilarityWarnings([]);
-    setDismissedWarnings(new Set());
     setSearchParams({ step: '4' });
 
     try {
@@ -199,13 +194,6 @@ export default function Generator() {
       if (streamed.length > 0) {
         saveToHistory(selectedCourses, streamed);
         startCooldown();
-
-        // Similarity detection against past history
-        try {
-          const hist: HistoryEntry[] = JSON.parse(localStorage.getItem('cmp-history') || '[]');
-          const warnings = detectSimilarities(streamed, hist);
-          setSimilarityWarnings(warnings);
-        } catch { /* ignore */ }
       }
     } catch (err) {
       console.error("Failed to generate ideas:", err);
@@ -499,38 +487,7 @@ export default function Generator() {
                   </div>
                 </div>
 
-                {/* Similarity Warnings */}
-                {similarityWarnings.filter((_, i) => !dismissedWarnings.has(i)).length > 0 && (
-                  <div className="space-y-2">
-                    {similarityWarnings.map((w, i) => dismissedWarnings.has(i) ? null : (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className={`flex items-start gap-3 border rounded-xl px-4 py-3 text-sm shadow-sm ${isDark ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-indigo-50/50 border-indigo-100 text-indigo-900'
-                          }`}
-                      >
-                        <div className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${isDark ? 'bg-slate-700' : 'bg-indigo-100'
-                          }`}>
-                          <Layers className={`w-3.5 h-3.5 ${isDark ? 'text-slate-400' : 'text-indigo-600'}`} />
-                        </div>
-                        <span className="flex-1 leading-relaxed">
-                          {lang === 'ar'
-                            ? `"${w.ideaTitle}" تتشابه مع "${w.matchTitle}"${w.isFromHistory ? ' من سجل سابق' : ''} بنسبة ${Math.round(w.score * 100)}%`
-                            : `"${w.ideaTitle}" is ${Math.round(w.score * 100)}% similar to "${w.matchTitle}"${w.isFromHistory ? ' (from your history)' : ''}`}
-                        </span>
-                        <button
-                          onClick={() => setDismissedWarnings(prev => new Set([...prev, i]))}
-                          className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity p-1"
-                          aria-label="Dismiss"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      </motion.div>
-                    ))}
-                  </div>
-                )}
+
 
 
 
