@@ -13,7 +13,6 @@ import { runInference, formatInferenceForPrompt, InferenceResult, FiredRule } fr
 import { parseCV } from '../lib/ml/cvParser';
 import { getTrainingResult, classifySkill, DOMAINS, TrainingResult } from '../lib/ml/skillClassifier';
 import TrainingLossChart from '../components/TrainingLossChart';
-import { optimizeProjectSelection, OptimizationResult, SimplexPivotStep } from '../lib/optimization/projectOptimizer';
 import { saveToHistory, toggleFavorite, isFavorite, HistoryEntry } from './History';
 import { getProfile } from './Profile';
 import { detectSimilarities, SimilarityWarning } from '../lib/similarity';
@@ -39,7 +38,6 @@ export default function Generator() {
 
   const [cvParsing, setCvParsing] = useState(false);
   const [cvResult, setCvResult] = useState<string | null>(null);
-  const [optimizationResult, setOptimizationResult] = useState<OptimizationResult | null>(null);
   const [inferenceData, setInferenceData] = useState<InferenceResult | null>(null);
   const [nnTraining, setNnTraining] = useState<TrainingResult | null>(null);
   const [similarityWarnings, setSimilarityWarnings] = useState<SimilarityWarning[]>([]);
@@ -159,7 +157,6 @@ export default function Generator() {
     setIsLoading(true);
     setError(null);
     setIdeas([]);  // clear previous ideas before streaming new ones
-    setOptimizationResult(null);
     setInferenceData(null);
     setSimilarityWarnings([]);
     setDismissedWarnings(new Set());
@@ -218,10 +215,6 @@ export default function Generator() {
     }
   };
 
-  const handleOptimize = () => {
-    const result = optimizeProjectSelection(ideas, selectedCourses);
-    setOptimizationResult(result);
-  };
 
   const toggleReasoning = (ideaId: string) => {
     setExpandedReasoning(prev => {
@@ -498,14 +491,7 @@ export default function Generator() {
                   <h3 className={`text-xl sm:text-2xl font-bold ${headingClass}`}>{t('gen_results_title')}</h3>
                   <div className="flex items-center gap-3">
                     <button
-                      onClick={handleOptimize}
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-sm ${isDark ? 'bg-indigo-900/30 text-indigo-300 border border-indigo-800 hover:bg-indigo-900/50' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
-                        }`}
-                    >
-                      <Zap className="w-4 h-4" /> {t('opt_btn')}
-                    </button>
-                    <button
-                      onClick={() => { setSearchParams({ step: '1' }); setIdeas([]); setOptimizationResult(null); setInferenceData(null); }}
+                      onClick={() => { setSearchParams({ step: '1' }); setIdeas([]); setInferenceData(null); }}
                       className="text-sm font-medium text-red-600 hover:text-red-700"
                     >
                       {t('gen_btn_start_over')}
@@ -554,7 +540,6 @@ export default function Generator() {
                 {/* ─── Idea Cards ─── */}
                 <div className="grid gap-6">
                   {ideas.map((idea, idx) => {
-                    const isOptimal = optimizationResult?.selectedProjects.some(p => p.id === idea.id);
                     const isFav = isFavorite(idea.id);
                     const courseCoverage = idea.courses.length;
                     const totalCourses = selectedCourses.length || 7;
@@ -565,28 +550,18 @@ export default function Generator() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.12 }}
-                        className={`relative overflow-hidden border rounded-2xl sm:rounded-3xl transition-all group shadow-sm hover:shadow-lg ${isOptimal
-                          ? isDark ? 'border-indigo-500/50 ring-2 ring-indigo-500/20' : 'border-indigo-300 ring-2 ring-indigo-500/10'
-                          : optimizationResult
-                            ? isDark ? 'border-slate-700 opacity-60' : 'border-slate-200 opacity-60'
-                            : isDark ? 'border-slate-700 hover:border-red-800' : 'border-slate-200 hover:border-red-200'
-                          } ${isDark ? 'bg-slate-800' : 'bg-white'}`}
+                        className={`relative overflow-hidden border rounded-2xl sm:rounded-3xl transition-all group shadow-sm hover:shadow-lg ${isDark ? 'border-slate-700 hover:border-red-800 bg-slate-800' : 'border-slate-200 hover:border-red-200 bg-white'}`}
                       >
                         {/* Thin top accent line */}
-                        <div className={`h-0.5 w-full ${isOptimal ? 'bg-indigo-500' : 'bg-red-600'
-                          }`} />
+                        <div className="h-0.5 w-full bg-red-600" />
 
                         <div className="p-5 sm:p-7">
                           {/* Header row */}
                           <div className="flex items-start justify-between gap-3 mb-4">
                             <div className="flex items-start gap-3 min-w-0">
-                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isOptimal
-                                ? isDark ? 'bg-indigo-500/20' : 'bg-indigo-50'
-                                : isDark ? 'bg-slate-700' : 'bg-red-50'
+                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${isDark ? 'bg-slate-700' : 'bg-red-50'
                                 }`}>
-                                <BookOpen className={`w-5 h-5 ${isOptimal
-                                  ? isDark ? 'text-indigo-400' : 'text-indigo-600'
-                                  : isDark ? 'text-red-400' : 'text-red-600'
+                                <BookOpen className={`w-5 h-5 ${isDark ? 'text-red-400' : 'text-red-600'
                                   }`} />
                               </div>
                               <div className="min-w-0">
@@ -601,12 +576,6 @@ export default function Generator() {
                                 }`}>
                                 {courseCoverage}/{totalCourses}
                               </span>
-                              {isOptimal && (
-                                <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${isDark ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30' : 'bg-indigo-50 border border-indigo-200 text-indigo-700'
-                                  }`}>
-                                  <Zap className="w-3 h-3 text-indigo-500" />
-                                </span>
-                              )}
                               <button
                                 onClick={(e) => { e.stopPropagation(); toggleFavorite(idea); setFavRefresh(n => n + 1); }}
                                 className={`p-1.5 rounded-full transition-colors ${isFav ? 'text-red-500' : isDark ? 'text-slate-600 hover:text-red-400' : 'text-slate-300 hover:text-red-500'}`}
